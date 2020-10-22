@@ -1,0 +1,21 @@
+.page {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background: #454545;
+}
+body {
+  font: 14px/26px 'Bungee', Helvetica, Arial, sans-serif;
+  color: #222;
+  padding: 0px;
+  text-transform: uppercase;
+}
+
+search {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
