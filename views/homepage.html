@@ -3,6 +3,26 @@
     <title>Instachan</title>
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .triangle-up {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 50px solid #16A000;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .triangle-down {
+            width: 0;
+            height: 0;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-top: 50px solid #FF0D0D;
+        }
+    </style>
 </head>
 <body>
 <div class="page">
@@ -17,18 +37,36 @@
     <p></p>
 
     <div id="postPreviews">
-        <button id="post">Post</button>
-        <button id="message">Message</button>
+        <form action="postpage.html" id="post">
+            <input type="submit" value="Post" />
+        </form>
+        <form action="messagePage.html" id="message">
+            <input type="submit" value="Message" />
+        </form>
         <button id="logOut">Logout</button>
         <div id="samplePost">
-            <p>I am creating a sample Post</p>
+            <button class="triangle-up" id="upvote"></button>
+            <label id="karma">0</label>
+            <button class="triangle-down" id="downvote"></button>
+            <p>
+                <img id="postImage" src="images/kitty.webp" alt="kittyPreview" class="center">
+                This is an image of a cat that I found the other day and this cat was being super adorable and
+                I just love it so much
+            </p>
+        </div>
+        <div id="samplePost2">
+            <button class="triangle-up" id="upvote2"></button>
+            <label id="karma2">0</label>
+            <button class="triangle-down" id="downvote2"></button>
+            <p>
+                <img id="postImage2" src="images/rit.jpg" alt="ritImage" class="center">
+                This is an image I took of RIT the other day
+            </p>
         </div>
     </div>
     <div id="sideBar">
         this is the left margin
     </div>
-    <a href="postpage.html" class="btn btn-primary">Click for Post Page</a>
-    <p></p>
     <a href="reportpage.html" class="btn btn-primary">Click for Report Page</a>
     <p></p>
     <a href="modpage.html" class="btn btn-primary">Click for Mod Page</a>
