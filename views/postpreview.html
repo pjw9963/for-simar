@@ -9,26 +9,29 @@
 
     <img id="instachanLogo" src="images/ic.png" alt="instachan">
     <p></p>
-    <form action="/homepage.html">
-        <label for="img">Select image:</label>
-        <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event)">
-        <img id="output" class="center"/>
-        <script>
-            var loadFile = function(event) {
-                var output = document.getElementById('output');
-                output.src = URL.createObjectURL(event.target.files[0]);
-                output.onload = function() {
-                    URL.revokeObjectURL(output.src) // free memory
-                }
-            };
-        </script>
-        <textarea id="textDetails" name="text" rows="4" cols="50">
+    <div id="postPreviews">
+    <form action="newhomepage.html">
+        <label for="images">Choose a Image:</label>
+        <select id="images" name="img" onchange="loadFile(event)">
+            <option value="kitty.webp">Kitty</option>
+            <option value="rit.jpg">RIT</option>
+            <option value="code.jpg">Code</option>
+            <option value="mountain.jpg">Mountain</option>
+        </select>
+        <p></p>
+        <img id="output" src="images/kitty.webp" class="center">
+        <p></p>
+        <textarea id="textDetails" name="text" rows="4" cols="50" class="center">
         </textarea>
-        <input type="submit" value="Post">
+        <p></p>
+        <input type="submit" value="Post" id="submit">
     </form>
+        <p></p>
     <form action="homepage.html" id="back">
         <input type="submit" value="Back" />
     </form>
+    </div>
 </div>
+<script type="text/javascript" src="javascripts/postpreview.js"></script>
 </body>
 </html>

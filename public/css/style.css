@@ -90,6 +90,26 @@ body {
   margin-bottom: 100px;
 }
 
+#upvoteNew{
+  background-color: #606060;
+  position: absolute;
+  left: 700px;
+  margin-bottom: 100px;
+}
+
+#downvoteNew{
+  background-color: #606060;
+  position: absolute;
+  left: 550px;
+  margin-bottom: 100px;
+}
+
+#karmaNew{
+  position: absolute;
+  left: 650px;
+  margin-bottom: 100px;
+}
+
 form {
   display: inline-block; //Or display: inline;
 }
