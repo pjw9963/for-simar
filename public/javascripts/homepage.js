@@ -31,4 +31,3 @@ upvoteButton.onclick = function () { upvote() };
 downvoteButton.onclick=function() { downvote() };
 upvoteButton2.onclick = function () { upvote2() };
 downvoteButton2.onclick=function() { downvote2() };
-
