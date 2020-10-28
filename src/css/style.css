@@ -167,3 +167,7 @@ form {
     display: inline-block;
     /*Or display: inline;*/
 }
+
+textarea {
+    resize: none;
+}

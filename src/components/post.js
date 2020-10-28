@@ -1,6 +1,24 @@
 import React from 'react';
 
 import '../css/style.css'
+import { useHistory } from "react-router"
+
+function GoToPostRedirect(props) {
+    let history = useHistory()
+  
+    function handleClick() {
+      history.push({
+          pathname: "/post",
+          forwardedData: props.pps
+      })
+    }
+  
+    return (
+      <h1 style={{color: "white"}} onClick={() => handleClick()}>
+      {props.pps.title}
+      </h1>
+    )
+  }
 
 class Post extends React.Component {
     constructor(props) {
@@ -14,8 +32,10 @@ class Post extends React.Component {
 
     render () {
         return (
-            <div>
-                <p>{this.props.title}</p>
+            <div style={{color: "white"}}>
+                <GoToPostRedirect 
+                        pps={this.props} 
+                />
                 <button class="triangle-up" 
                             id="upvote"
                             onClick={
@@ -41,6 +61,7 @@ class Post extends React.Component {
                     <button onclick = "location.href = 'postpage.html';" 
                             onclick = "postImage(document.getElementById('postImage').id);" 
                             class   = "float-left submit-button">{this.state.numreplies} replies</button>
+                    <hr/>
             </div>
             
         );
