@@ -20,12 +20,22 @@ body {
     padding: 0px;
 }
 
+#branchList {
+    overflow: hidden;
+    padding: 20px;
+}
+
 #branchList p{
     font-size: x-large;
     font-family: "Lucida Console", monospace;
     color: white;
     padding: 10px;
     margin: 5px;
+    display: inline;
+}
+
+#branchList a {
+    text-decoration: none;
 }
 
 mark.yellow {
