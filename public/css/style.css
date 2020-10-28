@@ -20,6 +20,19 @@ body {
     padding: 0px;
 }
 
+#branchList p{
+    font-size: x-large;
+    font-family: "Lucida Console", monospace;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+}
+
+mark.yellow {
+    color: yellow;
+    background: none;
+}
+
 #search {
     padding: 6px;
     border: none;
