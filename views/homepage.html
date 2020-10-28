@@ -1,5 +1,4 @@
 <html>
-
 <head>
     <title>Instachan</title>
 
@@ -25,55 +24,63 @@
         }
     </style>
 </head>
-
 <body>
-    <div class="page">
+<div class="page">
 
-        <img id="instachanLogo" src="images/ic.png" alt="instachan">
+    <img id="instachanLogo" src="images/ic.png" alt="instachan">
 
-        <label id="test"></label>
-        <p></p>
+    <label id="test"></label>
+    <p></p>
 
-        <p>\cats \computing \rit</p>
+    <p>\cats \computing \rit</p>
 
-        <input id="search" type="text" placeholder="Search..">
-        <p></p>
+    <input id="search" type="text" placeholder="Search..">
+    <p></p>
 
-        <div id="postPreviews">
-            <form action="postpreview.html" id="post">
-                <input type="submit" value="Post" />
-            </form>
-            <form action="messagePage.html" id="message">
-                <input type="submit" value="Message" />
-            </form>
-            <form action="modpage.html" id="logIn">
-                <input type="submit" value="Log In" />
-            </form>
-            <div id="samplePost">
-                <a href="postpage.html">Cat that I found That I like</a>
-                <p></p>
-                <button class="triangle-up" id="upvote"></button>
-                <label id="karma">0</label>
-                <button class="triangle-down" id="downvote"></button>
-                <p>
-                    <img id="postImage" src="images/kitty.webp" alt="kittyPreview" class="center"> This is an image of a cat that I found the other day and this cat was being super adorable and I just love it so much
-                </p>
-            </div>
-            <div id="samplePost2">
-                <button class="triangle-up" id="upvote2"></button>
-                <label id="karma2">0</label>
-                <button class="triangle-down" id="downvote2"></button>
-                <p>
-                    <img id="postImage2" src="images/rit.jpg" alt="ritImage" class="center"> This is an image I took of RIT the other day
-                </p>
-            </div>
+    <div id="postPreviews">
+        <form action="postpreview.html" id="post">
+            <input type="submit" value="Post" />
+        </form>
+        <form action="messagePage.html" id="message">
+            <input type="submit" value="Message" />
+        </form>
+        <form action="modpage.html" id="logIn">
+            <input type="submit" value="Log In"/>
+        </form>
+        <div id="samplePost">
+
+            <p>Cat that I found That I like</p>
+            <button class="triangle-up" id="upvote"></button>
+            <label id="karma">0</label>
+            <button class="triangle-down" id="downvote"></button>
+            <p>
+                <img id="postImage" src="images/kitty.webp" alt="kittyPreview" class="center">
+                This is an image of a cat that I found the other day and this cat was being super adorable and
+                I just love it so much
+            </p>
+            <button onclick="location.href = 'postpage.html';" onclick = "postImage(document.getElementById('postImage').id);" class="float-left submit-button">138 comments</button>
+            <button onclick="location.href = 'postpage.html';" onclick = "postImage(document.getElementById('postImage').id);" class="float-left submit-button">12 replies</button>
+
+
         </div>
-        <div id="sideBar">
-            this is the left margin
+        <div id="samplePost2">
+            <button class="triangle-up" id="upvote2"></button>
+            <label id="karma2">0</label>
+            <button class="triangle-down" id="downvote2"></button>
+            <p>
+                <img id="postImage2" src="images/rit.jpg" alt="ritImage" class="center">
+                This is an image I took of RIT the other day
+            </p>
+            <button onclick="location.href = 'postpage.html';" class="float-left submit-button">32 comments</button>
+            <button onclick="location.href = 'postpage.html';" class="float-left submit-button">2 replies</button>
+
         </div>
-        <a href="postpage.html" class="btn btn-primary">Click for Post Page</a>
     </div>
+    <div id="sideBar">
+        this is the left margin
+    </div>
+    <a href="postpage.html" class="btn btn-primary">Click for Post Page</a>
+</div>
     <script type="text/javascript" src="javascripts/homepage.js"></script>
 </body>
-
 </html>
