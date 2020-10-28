@@ -2,8 +2,10 @@
 
 <head>
     <title>Instachan</title>
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css" >
+    <script src="https://kit.fontawesome.com/81dd8ba312.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .triangle-up {
@@ -39,6 +41,8 @@
         <input id="search" type="text" placeholder="Search..">
         <p></p>
 
+        <!-- the below section needs to rendered from a datasource -->
+
         <div id="postPreviews">
             <form action="postpreview.html" id="post">
                 <input type="submit" value="Post" />
@@ -52,9 +56,9 @@
             <div id="samplePost">
                 <a href="postpage.html">Cat that I found That I like</a>
                 <p></p>
-                <button class="triangle-up" id="upvote"></button>
+                <button class="btn" style="background-color: transparent;" id="upvote"><i class="text-success fas fa-caret-up fa-5x"></i></button>
                 <label id="karma">0</label>
-                <button class="triangle-down" id="downvote"></button>
+                <button class="btn" style="background-color: transparent;" id="downvote"><i class="text-danger fas fa-caret-down fa-5x"></i></button>
                 <p>
                     <img id="postImage" src="images/kitty.webp" alt="kittyPreview" class="center"> This is an image of a cat that I found the other day and this cat was being super adorable and I just love it so much
                 </p>
