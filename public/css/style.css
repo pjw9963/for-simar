@@ -94,13 +94,23 @@ mark.yellow {
     vertical-align: middle;
 }
 
-#reportPostTitle {
+#reportPostHeader {
     border: 4px solid black;
     border-radius: 25px;
     background-color: #606060;
 }
 
-#reportReason {
+#reportPostTitle {
+    font-size: x-large;
+    color: white;
+}
+
+#reportPostBranch, #reportReason {
+    font-size: large;
+    color: white;
+}
+
+#reportReasonContainer {
     height:150px;
     width:375px;
     background-color: #606060;
@@ -110,6 +120,10 @@ mark.yellow {
 
 #reportButtons {
     padding: 30px;
+}
+
+#reportButtons input {
+    padding: 20px;
 }
 
 #upvote {

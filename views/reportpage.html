@@ -1,4 +1,4 @@
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Instachan</title>
 
@@ -20,22 +20,38 @@
     <input id="search" type="text" placeholder="Search.." />
     <p></p>
 
-    <div id="reportPost">
-        <div id="reportPostTitle">
-            <p style="font-size:x-large">This is an image of a cat that I found the other day...</p>
-            <p style="font-size:large">/cats, 23.1k</p>
-        </div>
-        <img id="postImage" src="images/kitty.webp" alt="kittyView" style="width:600px;height:400px" class="center">
-        <br>
-        <div id="reportBlockContainer">
-            <div id="reportReason">
-                <p style="font-size:large; color:red">Report Reason:</p> <p style="font-size:large; color:white">I hate cats</p>
+    <div id="reportPageContainer">
+        <div id="reportPost">
+            <div id="reportPostHeader">
+                <p id="reportPostTitle">This is an image of a cat that I found the other day...</p>
+                <p id="reportPostBranch"><mark class="yellow">/</mark>cats, 23.1k</p>
             </div>
-            <div id="reportButtons">
-                <img id="approve" src="images/check.png" style="width:50px;height:50px;margin:10px">
-                <img id="reject" src="images/cross.png" style="width:50px;height:50px;margin:10px">
-            </div>
+            <img id="postImage" src="images/kitty.webp" alt="kittyView" style="width:600px;height:400px" class="center">
+            <br>
+            <div id="reportBlockContainer">
+                <div id="reportReasonContainer">
+                    <p style="font-size:large; color:red">Report Reason:</p>
+                    <p id="reportReason">I hate cats</p>
+                </div>
+                <div id="reportButtons">
+                    <input
+                            width="50px"
+                            height="50px"
+                            type="image"
+                            src="images/check.png"
+                            id="approve"
+                    />
+
+                    <input
+                            width="50px"
+                            height="50px"
+                            type="image"
+                            src="images/cross.png"
+                            id="disapprove"
+                    />
+                </div>
         </div>
+    </div>
     </div>
 
     <div id="reportsBar">
