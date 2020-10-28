@@ -19,7 +19,7 @@ class Post extends React.Component {
                 <button class="triangle-up" 
                             id="upvote"
                             onClick={
-                                () => this.setState({karma: this.state.karma + 1})
+                                () => this.setState({karma: parseInt(this.state.karma) + 1})
                             }>
                 </button>
                     <label>{this.state.karma}</label>
@@ -27,7 +27,7 @@ class Post extends React.Component {
                     <button class="triangle-down" 
                             id="downvote"
                             onClick={
-                                () => this.setState({karma: this.state.karma - 1})
+                                () => this.setState({karma: parseInt(this.state.karma) - 1})
                             }>
                     </button>
                     <p>
