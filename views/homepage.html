@@ -1,18 +1,33 @@
 <html>
+<<<<<<< HEAD
 <head>
+=======
+  <head>
+>>>>>>> homepage
     <title>Instachan</title>
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/81dd8ba312.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-        .triangle-up {
-            width: 0;
-            height: 0;
-            border-left: 25px solid transparent;
-            border-right: 25px solid transparent;
-            border-bottom: 50px solid #16A000;
-        }
+      .triangle-up {
+        width: 0;
+        height: 0;
+        border-left: 25px solid transparent;
+        border-right: 25px solid transparent;
+        border-bottom: 50px solid #16a000;
+      }
     </style>
+<<<<<<< HEAD
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .triangle-down {
@@ -75,6 +90,114 @@
             <button onclick="location.href = 'postpage.html';" class="float-left submit-button">2 replies</button>
 
         </div>
+=======
+  </head>
+
+  <body>
+    <div class="page">
+      <img id="instachanLogo" src="images/ic.png" alt="instachan" />
+
+      <label id="test"></label>
+      <p></p>
+
+      <p>\cats \computing \rit</p>
+
+      <input id="search" type="text" placeholder="Search.." />
+      <p></p>
+
+      <!-- the below section needs to rendered from a datasource -->
+
+      <div id="postPreviews">
+        <form action="postpreview.html" id="post">
+          <input type="submit" value="Post" />
+        </form>
+        <form action="messagePage.html" id="message">
+          <input type="submit" value="Message" />
+        </form>
+        <form action="modpage.html" id="logIn">
+          <input type="submit" value="Log In" />
+        </form>
+
+        <div id="samplePost">
+          <div>
+            <a href="postpage.html">Cat that I found That I like</a>
+          </div>
+          <div>
+            <input
+              width="65px"
+              height="50px"
+              type="image"
+              src="images/triangle_up_green.png"
+              class="btn"
+              style="background-color: transparent"
+              id="upvote"
+            />
+            <label id="karma">0</label>
+            <input
+              width="65px"
+              height="50px"
+              type="image"
+              src="images/triangle_down_red.png"
+              class="btn"
+              style="background-color: transparent"
+              id="downvote"
+            />
+          </div>
+          <div>
+            <img
+            id="postImage"
+            src="images/kitty.webp"
+            alt="kittyPreview"
+            class="center"
+          />
+          </div>
+          <p>
+            This is an image of a cat that I found the other day and this cat
+            was being super adorable and I just love it so much
+          </p>
+        </div>
+
+        <div id="samplePost2">
+          <div>
+            <a href="postpage.html">Image of RIT from a drone</a>
+          </div>
+
+          <div>
+            <input
+              width="65px"
+              height="50px"
+              type="image"
+              src="images/triangle_up_green.png"
+              class="btn"
+              style="background-color: transparent"
+              id="upvote2"
+            />
+            <label id="karma2">0</label>
+            <input
+              width="65px"
+              height="50px"
+              type="image"
+              src="images/triangle_down_red.png"
+              class="btn"
+              style="background-color: transparent"
+              id="downvote2"
+            />
+          </div>
+
+          <div>
+            <img
+            id="postImage2"
+            src="images/rit.jpg"
+            alt="ritImage"
+            class="center"
+          />
+          </div>
+          <p>This is an image I took of RIT the other day</p>
+        </div>
+      </div>
+      <div id="sideBar">this is the left margin</div>
+      <a href="postpage.html" class="btn btn-primary">Click for Post Page</a>
+>>>>>>> homepage
     </div>
     <div id="sideBar">
         this is the left margin
@@ -82,5 +205,10 @@
     <a href="postpage.html" class="btn btn-primary">Click for Post Page</a>
 </div>
     <script type="text/javascript" src="javascripts/homepage.js"></script>
+<<<<<<< HEAD
 </body>
 </html>
+=======
+  </body>
+</html>
+>>>>>>> homepage
