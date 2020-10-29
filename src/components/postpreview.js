@@ -5,43 +5,41 @@ import PostWrapper from './postwrapper';
 import '../css/style.css';
 
 class PostPreview extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {picval: "/images/mountain.jpg"};
+
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({picval: event.target.value});
+    }
   
     render() {
     return (
         <div>
           <Header />
-          <div class="page">
+            <div class="page">
                 <div id="postPreviews">
-                    <form action="postpreview.html" id="post">
-                        <input type="submit" value="Post" />
+                    <form action="newhomepage.html">
+                        <label for="images">Choose a Image:</label>
+                        <select value={this.state.picval} onChange={this.handleChange} id="images" name="img">
+                            <option value="/images/kitty.webp">Kitty</option>
+                            <option value="/images/rit.jpg">RIT</option>
+                            <option value="/images/code.jpg">Code</option>
+                            <option value="/images/mountain.jpg">Mountain</option>
+                        </select>
+                        <img id="output" src={this.state.picval} class="center"/>
+                        <p></p>
+                        <textarea id="textDetails" name="text" rows="4" cols="50" class="center" />
+                        <input type="submit" value="Post" id="submit"/>
                     </form>
-                    <form action="messagePage.html" id="message">
-                        <input type="submit" value="Message" />
+                    <form action="homepage.html" id="back">
+                        <input type="submit" value="Back" />
                     </form>
-                    <form action="modpage.html" id="logIn">
-                        <input type="submit" value="Log In"/>
-                    </form>
-                    <PostWrapper
-                        title = "Cat I found"
-                        desc = "This is an image of a cat that I found the other day and this cat was being super adorable and I just love it so much"
-                        image = "/images/kitty.webp"
-                        karma = "10"
-                        numcomments = "4"
-                        numreplies = "1"
-                    />
-                    <PostWrapper 
-                        title = "Picture of RIT"
-                        desc = "Picture of RIT the other day"
-                        image = "/images/rit.jpg"
-                        karma = "68"
-                        numcomments = "13"
-                        numreplies = "6"
-                    />
                 </div>
-                <div id="sideBar">
-                    this is the left margin
-                </div>
-                <a href="postpage.html" class="btn btn-primary">Click for Post Page</a>
             </div>
         </div>
     );

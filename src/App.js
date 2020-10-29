@@ -15,7 +15,7 @@ class App extends Component {
       <div>
       <Router>
         <Switch>
-          <Route path='/postpreview' component={PostPreview} />
+          <Route path='/preview' component={PostPreview} />
           <Route path='/reports' component={ReportsPage} />
           <Route path='/messages' component={Messages} />
           <Route path='/post' component={PostPage} />
