@@ -4,11 +4,16 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const { Sequelize, DataTypes } = require('sequelize');
+const bodyParser = require('body-parser');
+
 
 var indexRouter = require('./routes/posts');
 var usersRouter = require('./routes/users');
 
 var app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({limit: '50mb'}));
 
 //database setup
 
@@ -71,7 +76,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json({ error: err })
 });
 
 module.exports = app;
