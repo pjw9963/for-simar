@@ -112,10 +112,14 @@ mark.yellow {
 
 #reportReasonContainer {
     height:150px;
-    width:375px;
+    width:300px;
     background-color: #606060;
     padding-left: 10px;
     padding-right: 10px;
+}
+
+#reportReasonContainer p, #reportResult {
+    font-size: large;
 }
 
 #reportButtons {
@@ -125,6 +129,7 @@ mark.yellow {
 #reportButtons input {
     padding: 20px;
 }
+
 
 #upvote {
     background-color: #606060;
