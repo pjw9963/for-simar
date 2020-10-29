@@ -4,7 +4,7 @@ import PostWrapper from './postwrapper';
 
 import '../css/style.css';
 
-class Home extends Component {
+class PostPreview extends Component {
   
     render() {
     return (
@@ -49,4 +49,4 @@ class Home extends Component {
 
 }
 
-export default Home;
+export default PostPreview;

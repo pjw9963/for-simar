@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header';
-import Post from './post';
+import PostWrapper from './postwrapper';
 
 import '../css/style.css';
 import Report from './report';

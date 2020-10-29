@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from './post';
+import PostWrapper from './postwrapper';
 
 import '../css/style.css'
 
@@ -25,7 +25,7 @@ class Report extends React.Component {
         return (
             <div style={{color: "white"}}>
                 {/** Need to load in */}
-                <Post title="{this.props.title}"
+                <PostWrapper title="{this.props.title}"
                       karma="{this.props.karma}"
                       desc="{this.props.desc}"
                       image="/images/kitty.webp"
