@@ -64,6 +64,7 @@ mark.yellow {
     float: left;
     position: absolute;
     background-color: #C4C4C4;
+    text-align: center;
     top: 25%;
     left: 5%;
 }

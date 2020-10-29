@@ -52,7 +52,9 @@ downvoteButtonNew.onclick=function() {downvoteNew()};
 window.onload = () => {
     x = window.location.search;
     imgLoc = x.search("img=");
+    titleLoc = x.search("title=")
     imgSrc = x.search("text=");
-    document.getElementById("postImageNew").src = "/images/"+x.substring(imgLoc+4, imgSrc-1);
+    document.getElementById("postImageNew").src = "/images/"+x.substring(imgLoc+4, titleLoc-1);
+    document.getElementById("title").innerText = x.substring(titleLoc+6, imgSrc-1).replaceAll("+", " ");
     document.getElementById("postText").innerText = x.substring(imgSrc+5).replaceAll("+", " ");
 }
