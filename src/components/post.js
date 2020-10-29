@@ -1,7 +1,7 @@
 import React from 'react';
+import { useHistory } from "react-router"
 
 import '../css/style.css'
-import { useHistory } from "react-router"
 
 function GoToPostRedirect(props) {
     let history = useHistory()

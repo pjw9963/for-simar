@@ -5,6 +5,7 @@ import Home from './components/home';
 import Messages from './components/messages'
 import ModPage from './components/modpage'
 import PostPage from './components/postpage';
+import ReportsPage from './components/reportspage';
 
 class App extends Component {
   render() {
@@ -12,9 +13,10 @@ class App extends Component {
       <div>
       <Router>
         <Switch>
+          <Route path='/reports' component={ReportsPage} />
           <Route path='/messages' component={Messages} />
-          <Route path='/mod' component={ModPage} />
           <Route path='/post' component={PostPage} />
+          <Route path='/mod' component={ModPage} />
           <Route exact path='/' component={Home} />
           </Switch>
       </Router>        

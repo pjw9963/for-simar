@@ -1,11 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect} from 'react-router-dom';
+import { useHistory } from "react-router"
 
 import '../css/messages.css'
-import './gohomeredirect'
-import Home from './home';
-
-import { useHistory } from "react-router"
 
 function GoHomeRedirect() {
   let history = useHistory()
@@ -26,7 +22,6 @@ function GoHomeRedirect() {
 class Header extends React.Component {
 
     render () {
-
         return (
             <div style={{
                 textAlign: "center",
