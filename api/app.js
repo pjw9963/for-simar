@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const { Sequelize, DataTypes } = require('sequelize');
 
-var indexRouter = require('./routes/index');
+var indexRouter = require('./routes/posts');
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -47,6 +47,7 @@ async function message_model(){
   await Message.sync({ force: true });
   console.log("The table for the Message model was just (re)created!");
 }
+
 
 app.use(logger('dev'));
 app.use(express.json());
