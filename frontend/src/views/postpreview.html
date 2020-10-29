@@ -1,0 +1,37 @@
+<html>
+<head>
+    <title>Instachan</title>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="page">
+
+    <img id="instachanLogo" src="images/ic.png" alt="instachan">
+    <p></p>
+    <div id="postPreviews">
+    <form action="newhomepage.html">
+        <label for="images">Choose a Image:</label>
+        <select id="images" name="img" onchange="loadFile(event)">
+            <option value="kitty.webp">Kitty</option>
+            <option value="rit.jpg">RIT</option>
+            <option value="code.jpg">Code</option>
+            <option value="mountain.jpg">Mountain</option>
+        </select>
+        <p></p>
+        <img id="output" src="images/kitty.webp" class="center">
+        <p></p>
+        <textarea id="textDetails" name="text" rows="4" cols="50" class="center">
+        </textarea>
+        <p></p>
+        <input type="submit" value="Post" id="submit">
+    </form>
+        <p></p>
+    <form action="homepage.html" id="back">
+        <input type="submit" value="Back" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript" src="javascripts/postpreview.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+.MessagePreview body {
+    color: white;
+    font-size: 20px;
+}
+
+.MessagePreview h2 {
+    color: white;
+    text-align: center;
+}
+
+.MessagePreview a:link,
+.MessagePreview a:visited {
+    color: white
+}
+
+.MessagePreview ul {
+    list-style: none;
+    color: white;
+}
+
+.MessagePreview ul#branches li {
+    display: inline;
+    padding-right: 0.2em;
+    padding-left: 0.2em;
+}
+
+.MessagePreview img#instachanLogo:hover {
+    opacity: .5;
+}
+
+.MessagePreview .ylo:hover {
+    color: #333;
+}
+
+.MessagePreview .ylo::first-letter {
+    font-weight: bold;
+    color: yellow;
+}
+
+.MessagePreview .inner-border {
+    outline-color: black;
+    outline-style: solid;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 60%;
+    height: auto;
+}
+
+.MessagePreview .message-li {
+    border-color: black;
+    border-width: 0 0 0.05em 0;
+    border-style: solid;
+    text-align: left;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.MessagePreview .message-li:hover {
+    background-color: #888;
+}
+
+.MessagePreview .msg-preview {
+    color: lightgray;
+}
