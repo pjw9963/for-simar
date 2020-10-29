@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header';
-import Post from './post';
+import PostWrapper from './postwrapper';
 
 import '../css/style.css';
 
@@ -21,7 +21,7 @@ class Home extends Component {
                     <form action="modpage.html" id="logIn">
                         <input type="submit" value="Log In"/>
                     </form>
-                    <Post
+                    <PostWrapper
                         title = "Cat I found"
                         desc = "This is an image of a cat that I found the other day and this cat was being super adorable and I just love it so much"
                         image = "/images/kitty.webp"
@@ -29,7 +29,7 @@ class Home extends Component {
                         numcomments = "4"
                         numreplies = "1"
                     />
-                    <Post 
+                    <PostWrapper 
                         title = "Picture of RIT"
                         desc = "Picture of RIT the other day"
                         image = "/images/rit.jpg"

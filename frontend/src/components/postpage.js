@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Header from './header';
-import Post from './post';
+import PostWrapper from './postwrapper';
 
 import '../css/style.css';
 
@@ -39,7 +39,7 @@ class PostPage extends Component {
                         <form action="modpage.html" id="logIn">
                             <input type="submit" value="Log In"/>
                         </form>
-                        <Post
+                        <PostWrapper
                             title = {this.state.title}
                             desc = {this.state.desc}
                             image = {this.state.image}
