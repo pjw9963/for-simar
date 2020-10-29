@@ -17,75 +17,11 @@ const sequelize = new Sequelize({
   storage: 'data/database.sqlite'
 });
 
-const User = sequelize.define('User', {
-  // Model attributes are defined here
-  userName: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  passsword: {
-    type: DataTypes.STRING,
-    allowNull: false            //definilty encrypt passwords if this was for real
-  }
-});
 
-const Post = sequelize.define('Post', {
-  title: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  text: {
-    type: DataTypes.TEXT,
-    allowNull: true
-  },
-  upVotes: {
-    type: DataTypes.INTEGER,
-    defaultValue: 0
-  },
-  downVotes: {
-    type: DataTypes.INTEGER,
-    defaultValue: 0
-  },
-  imageName: {
-    type: DataTypes.STRING,
-    allowNull: false          
-  },
-  imageLocation: {
-    type: DataTypes.STRING,
-    allowNull: false
-  }
-});
-
-const Comment = sequelize.define('Comment', {
-  text: {
-    type: DataTypes.TEXT,
-    allowNull: false
-  },
-  author: {
-    type: DataTypes.TEXT,
-    allowNull: true
-  },
-  upVotes: {
-    type: DataTypes.INTEGER,
-    defaultValue: 0
-  },
-  downVotes: {
-    type: DataTypes.INTEGER,
-    defaultValue: 0
-  }
-});
-
-const Message = sequelize.define('Message', {
-  text: {
-    type: DataTypes.TEXT
-  }
-});
-
-User.hasMany(Post);
-Post.hasOne(User);
-Post.hasMany(Comment);
-Message.belongsTo(User, {as: 'sender'});
-Message.belongsTo(User, {as: 'receiver'});
+var Post = require("./models/post")(sequelize, DataTypes);
+var User = require("./models/user")(sequelize, DataTypes);
+var Comment = require("./models/comment")(sequelize, DataTypes);
+var Message = require("./models/message")(sequelize, DataTypes);
 
 user_model();
 post_model();
