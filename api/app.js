@@ -34,23 +34,19 @@ comment_model();
 message_model();
 
 async function user_model(){
-  await User.sync({ force: true });
-  console.log("The table for the User model was just (re)created!");
+  await User.sync({ force: false });
 }
 
 async function post_model(){
-  await Post.sync({ force: true });
-  console.log("The table for the Post model was just (re)created!");
+  await Post.sync({ force: false });
 }
 
 async function comment_model(){
-  await Comment.sync({ force: true });
-  console.log("The table for the Comment model was just (re)created!");
+  await Comment.sync({ force: false });
 }
 
 async function message_model(){
-  await Message.sync({ force: true });
-  console.log("The table for the Message model was just (re)created!");
+  await Message.sync({ force: false });  
 }
 
 

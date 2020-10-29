@@ -12,4 +12,8 @@ router.post("/api/post/create", function(req, res){
     postController.create(req,res);
 });
 
+router.delete("/api/post/remove", function(req, res){
+    postController.delete(req, res);
+});
+
 module.exports = router;

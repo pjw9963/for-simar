@@ -39,6 +39,22 @@ module.exports = {
     }
   },
 
+  async delete(req, res) {
+    try {
+      let id = req.body.id;
+      Post.findByPk(id).then(function(post) {
+        deleteImage(post.imageName);
+      }).then(() => Post.destroy({ where: { id: id } }));
+      // let n = await Post.destroy({ where: { id: id } });
+      // if (n == 0) throw console.error('row not deleted');
+      res.status(201).send(postCollection);
+    } catch (e) {
+      console.log(e);
+
+      res.status(400).send(e);
+    }
+  },
+
   async update(req, res) {
     try {
       const postCollection = await Post.find({
@@ -77,4 +93,9 @@ function saveImage(baseImage) {
 
   fs.writeFileSync(localPath + '/' + filename, base64Data, "base64");
   return filename;
+}
+
+function deleteImage(name) {
+  const localPath = resolve("./data/images");
+  fs.unlink(localPath + '/' + name, () => console.log(name + ' deleted!'));
 }
