@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Header from "./header";
 import PostWrapper from "./postwrapper";
+import PageNavigation from "./pagenavigation";
 
 import "../css/style.css";
 
@@ -71,6 +72,7 @@ class PostPreview extends Component {
       <div>
         <Header />
         <div class="page">
+        <PageNavigation/>
           <div id="postPreviews">
             <form
               onChange={(e) => this.onChange(e)}

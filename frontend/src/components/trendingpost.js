@@ -35,7 +35,7 @@ class TrendingPost extends React.Component {
 
   render() {
     return (
-      <div style={{ color: "white" }}>
+      <div style={{ color: "black" }}>
         <GoToPostRedirect pps={this.props} />
         <div>
           <p>{this.props.desc}</p>

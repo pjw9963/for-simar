@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Header from "./header";
 import PostWrapper from "./postwrapper";
+import TrendingPost from "./trendingpost";
+import PageNavigation from "./pagenavigation";
 
 import "../css/style.css";
 
@@ -9,6 +11,7 @@ class ModPage extends Component {
     super(props);
     this.state = {
       posts: [],
+      tposts: [],
     };
   }
 
@@ -21,13 +24,26 @@ class ModPage extends Component {
       .then((data) => {
         this.setState({ posts: data });
       });
+
+    var trendingRequest = new Request(
+      "http://localhost:3001/api/post/trending"
+    );
+    let tposts = [];
+
+    fetch(trendingRequest)
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ tposts: data });
+      });
   }
 
   render() {
     return (
       <div>
         <Header />
+
         <div class="page">
+          <PageNavigation />
           <div id="postPreviews">
             {this.state.posts.map((post) => {
               return (
@@ -44,7 +60,21 @@ class ModPage extends Component {
               );
             })}
           </div>
-          <div id="sideBar">this is the trending margin</div>
+          <div id="sideBar">
+            <h2>Trending Posts</h2>
+            {this.state.tposts.map((post) => {
+              return (
+                <div>
+                  <TrendingPost
+                    title={post.title}
+                    desc={post.text}
+                    image={`http://localhost:3001/${post.imageName}`}
+                    karma={post.karma}
+                  />
+                </div>
+              );
+            })}
+          </div>
           <div id="reportsBar">
             this is the report margin
             <p></p>

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./header";
 import PostWrapper from "./postwrapper";
 import TrendingPost from "./trendingpost";
+import PageNavigation from "./pagenavigation";
 
 import "../css/style.css";
 
@@ -41,15 +42,7 @@ class Home extends Component {
       <div>
         <Header />
         <div class="page">
-          <a class="link-button" href="preview">
-            Post
-          </a>
-          <a class="link-button" href="messages">
-            Messages
-          </a>
-          <a class="link-button" href="mod">
-            Log in
-          </a>
+          <PageNavigation />
           <div id="postPreviews">
             {this.state.posts.map((post) => {
               return (
@@ -76,7 +69,7 @@ class Home extends Component {
                     title={post.title}
                     desc={post.text}
                     image={`http://localhost:3001/${post.imageName}`}
-                    karma={post.karma}                    
+                    karma={post.karma}
                   />
                 </div>
               );

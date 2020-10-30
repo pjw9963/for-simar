@@ -27,7 +27,7 @@ class Post extends React.Component {
     
     render () {
         return (
-            <div style={{color: "white"}}>
+            <div style={{color: "black"}}>
                 <p>
                     <GoToPostRedirect pps={this.props} />
                     {this.props.desc}
