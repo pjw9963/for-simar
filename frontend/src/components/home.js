@@ -76,6 +76,7 @@ class Home extends Component {
                     title={post.title}
                     desc={post.text}
                     image={`http://localhost:3001/${post.imageName}`}
+                    karma={post.karma}                    
                   />
                 </div>
               );

@@ -89,6 +89,7 @@ class PostWrapper extends React.Component {
             showtitle={false}
             image={this.props.image}
             desc={this.props.desc}
+            karma={this.props.karma}
           />
         </div>
 

@@ -40,10 +40,13 @@ body {
 
 #sideBar {
     float: left;
-    position: absolute;
+    position: fixed;
     background-color: #C4C4C4;
-    top: 25%;
+    top: 10%;
     left: 5%;
+    overflow: scroll;
+    max-height: 80vh;
+    max-width: 20vw;
 }
 
 #reportsBar {
