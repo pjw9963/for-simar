@@ -181,3 +181,7 @@ textarea {
 .karma {
     float: right;
 }
+
+.v-spacing {
+    padding: 5px 0px;;
+}

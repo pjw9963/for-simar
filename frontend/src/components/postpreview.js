@@ -17,17 +17,18 @@ class PostPreview extends Component {
   }
 
   onChange = (e) => {
-    console.log("file to upload:", e.target.files[0]);
-    var fileExt = e.target.files[0].name.split('.').pop();
-    this.setState({
-        fileExt: fileExt
+    if (e.target.files) {
+      var fileExt = e.target.files[0].name.split(".").pop();
+      this.setState({
+        fileExt: fileExt,
       });
-    let file = e.target.files[0];
+      let file = e.target.files[0];
 
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = this._handleReaderLoaded.bind(this);
-      reader.readAsBinaryString(file);
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = this._handleReaderLoaded.bind(this);
+        reader.readAsBinaryString(file);
+      }
     }
   };
 
@@ -41,19 +42,28 @@ class PostPreview extends Component {
   onFileSubmit = (e) => {
     e.preventDefault();
     let payload = {
-      title: "test",
-      text: "test text",
+      title: this.state.title,
+      text: this.state.text,
       base64Image: `data:image/${this.state.fileExt};base64, ${this.state.base64TextString}`,
     };
     fetch("http://localhost:3001/api/post/create", {
-        method: "POST",
-        headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(payload)
-    }).then(res => res.json())
-    .then(json => console.log(json));
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    })
+      .then((res) => res.json())
+      .then((json) => console.log(json));
+  };
+
+  titleChange = (e) => {
+    this.setState({ title: e.target.value });
+  };
+
+  textChange = (e) => {
+    this.setState({ text: e.target.value });
   };
 
   render() {
@@ -66,42 +76,33 @@ class PostPreview extends Component {
               onChange={(e) => this.onChange(e)}
               onSubmit={(e) => this.onFileSubmit(e)}
             >
-              {/* <input type="text"></input>
-              <input type="text"></input> */}
-              <input
-                type="file"
-                name="image"
-                id="file"
-                accept=".jpeg, .png, jpg"
-              ></input>
-              <input type="submit"></input>
-            </form>
-            <form action="newhomepage.html">
-              <label for="images">Choose a Image:</label>
-              <select
-                value={this.state.picval}
-                onChange={this.handleChange}
-                id="images"
-                name="img"
-              >
-                <option value="/images/kitty.webp">Kitty</option>
-                <option value="/images/rit.jpg">RIT</option>
-                <option value="/images/code.jpg">Code</option>
-                <option value="/images/mountain.jpg">Mountain</option>
-              </select>
-              <img id="output" src={this.state.picval} class="center" />
-              <p></p>
-              <textarea
-                id="textDetails"
-                name="text"
-                rows="4"
-                cols="50"
-                class="center"
-              />
-              <input type="submit" value="Post" id="submit" />
-            </form>
-            <form action="homepage.html" id="back">
-              <input type="submit" value="Back" />
+              <div class="v-spacing">
+                <label for="title">Post Title: </label>
+                <input
+                  name="title"
+                  onChange={this.titleChange}
+                  type="text"
+                ></input>
+              </div>
+              <div class="v-spacing">
+                <label for="text">Post Text Content: </label>
+                <input
+                  name="text"
+                  onChange={this.textChange}
+                  type="text"
+                ></input>
+              </div>
+              <div class="v-spacing">
+                <input
+                  type="file"
+                  name="image"
+                  id="file"
+                  accept=".jpeg, .png, jpg"
+                ></input>
+              </div>
+              <div class="v-spacing">
+                <input type="submit" value="Create Post"></input>
+              </div>
             </form>
           </div>
         </div>
