@@ -14,9 +14,11 @@ var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb'}));
+var publicDir = require('path').join(__dirname,'./data/images'); 
+console.log(publicDir);
+app.use(express.static(publicDir)); 
 
 //database setup
-
 const sequelize = new Sequelize({
   dialect: 'sqlite',
   storage: 'data/database.sqlite'
