@@ -1,6 +1,19 @@
 import React from 'react';
+import { useHistory } from "react-router";
 
 import '../css/style.css'
+
+function GoToPostRedirect(props) {
+    let history = useHistory();
+  
+    function handleClick() {
+      history.push({
+        pathname: "/post",
+        forwardedData: props.pps,
+      });
+    }
+    return <img onClick={() => handleClick()} id="postImage" src={props.pps.image} alt={props.pps.title} class="center post-image"></img>;
+  }
 
 class Post extends React.Component {
     constructor(props) {
@@ -11,12 +24,12 @@ class Post extends React.Component {
             numreplies: this.props.numreplies
         }
     }
-
+    
     render () {
         return (
             <div style={{color: "white"}}>
                 <p>
-                    <img id="postImage" src={this.props.image} alt={this.props.title} class="center"></img>
+                    <GoToPostRedirect pps={this.props} />
                     {this.props.desc}
                 </p>
             </div>

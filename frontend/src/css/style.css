@@ -152,3 +152,7 @@ textarea {
     display: flex;
     margin: 2% 5% 0;
 }
+
+.post-image, .post-title-container {
+    cursor: pointer;
+}
