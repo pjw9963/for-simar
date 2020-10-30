@@ -54,6 +54,24 @@ module.exports = {
     }
   },
 
+  async updateKarma(req, res) {
+    try {
+      let newKarma = req.body.karma;
+      console.log(req.body.id);
+      const post = await Post.findByPk(req.body.id);
+      if (newKarma > post.upVotes + post.downVotes) {
+        post.upVotes += 1;
+      } else {
+        post.downVotes += 1;
+      }
+      await post.save();
+      res.status(201).send(post);
+    } catch (e) {
+      console.log(e);
+      res.status(400).send(e);
+    }
+  },
+
   async delete(req, res) {
     try {
       let id = req.body.id;

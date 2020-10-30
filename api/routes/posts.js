@@ -20,4 +20,8 @@ router.get("/api/post/trending", function(req, res) {
     postController.getTrendingPosts(req,res);
 });
 
+router.patch("/api/post/karma", function(req, res) {
+    postController.updateKarma(req,res);
+});
+
 module.exports = router;

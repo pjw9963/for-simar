@@ -20,11 +20,31 @@ class PostWrapper extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: this.props.id,
       karma: this.props.karma,
       numcomments: this.props.numcomments,
       numreplies: this.props.numreplies,
     };
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.karma!== this.state.karma) {
+        let payload = {
+            id: this.state.id,
+            karma: this.state.karma
+          };
+        fetch("http://localhost:3001/api/post/karma", {
+            method: "PATCH",
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+          })
+            .then((res) => res.json())
+            .then((json) => console.log(json));
+    }
+}
 
   render() {
     return (
@@ -62,7 +82,7 @@ class PostWrapper extends React.Component {
             </span>
           </div>
         </div>
-        
+
         <div class="post-container">
           <Post
             title={this.props.title}

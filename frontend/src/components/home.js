@@ -24,7 +24,9 @@ class Home extends Component {
         this.setState({ posts: data });
       });
 
-    var trendingRequest = new Request("http://localhost:3001/api/post/trending");
+    var trendingRequest = new Request(
+      "http://localhost:3001/api/post/trending"
+    );
     let tposts = [];
 
     fetch(trendingRequest)
@@ -53,6 +55,7 @@ class Home extends Component {
               return (
                 <div>
                   <PostWrapper
+                    id={post.id}
                     title={post.title}
                     desc={post.text}
                     image={`http://localhost:3001/${post.imageName}`}
@@ -65,8 +68,8 @@ class Home extends Component {
             })}
           </div>
           <div id="sideBar">
-              <h2>Trending Posts</h2>
-              {this.state.tposts.map((post) => {
+            <h2>Trending Posts</h2>
+            {this.state.tposts.map((post) => {
               return (
                 <div>
                   <TrendingPost
