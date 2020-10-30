@@ -1,7 +1,12 @@
+import { func } from 'prop-types';
 import React from 'react';
 import { useHistory } from "react-router"
 
 import '../css/messages.css'
+
+function itsAPrototype() {
+    alert('Only one branch exists for now. This is only a prototype');
+}
 
 function GoHomeRedirect() {
   let history = useHistory()
@@ -19,13 +24,13 @@ function GoHomeRedirect() {
             </img>
             <ul id="branches">
                 <li><a class="ylo" href="#" onClick={() => clickHome()}>/all</a></li>
-                <li><a class="ylo" href="#">/anime</a></li>
-                <li><a class="ylo" href="#">/auto</a></li>
-                <li><a class="ylo" href="#">/cats</a></li>
-                <li><a class="ylo" href="#">/cooking</a></li>
-                <li><a class="ylo" href="#">/dogs</a></li>
-                <li><a class="ylo" href="#">/memes</a></li>
-                <li><a class="ylo" href="#">/rit</a></li>
+                <li><a class="ylo" href="#" onClick={() => itsAPrototype()} >/anime</a></li>
+                <li><a class="ylo" href="#" onClick={() => itsAPrototype()} >/auto</a></li>
+                <li><a class="ylo" href="#" onClick={() => itsAPrototype()} >/cats</a></li>
+                <li><a class="ylo" href="#" onClick={() => itsAPrototype()} >/cooking</a></li>
+                <li><a class="ylo" href="#" onClick={() => itsAPrototype()} >/dogs</a></li>
+                <li><a class="ylo" href="#" onClick={() => itsAPrototype()} >/memes</a></li>
+                <li><a class="ylo" href="#" onClick={() => itsAPrototype()} >/rit</a></li>
             </ul>
         </div>
     )
