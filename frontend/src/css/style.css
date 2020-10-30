@@ -180,8 +180,21 @@ textarea {
 
 .karma {
     float: right;
+    position: relative;
+    right: 25%;
 }
 
 .v-spacing {
     padding: 5px 0px;;
+}
+
+.karma-container {
+    padding: 5px 10px;
+    background-color: #C4C4C4;
+    box-shadow: 2px 2px 2px black;
+    position: relative;
+    top: -15px;
+    font-size: large;
+    margin: 0px 12px;
+    color:black;
 }

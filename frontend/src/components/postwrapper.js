@@ -36,7 +36,7 @@ class PostWrapper extends React.Component {
 
   render() {
     return (
-      <div style={{ color: "white", display: "inline-block"}}>
+      <div style={{ color: "white"}}>
         <GoToPostRedirect pps={this.props} />
 
         <div class="karma" className="karma">
@@ -45,24 +45,24 @@ class PostWrapper extends React.Component {
             height="35px"
             type="image"
             src="images/triangle_up_green.png"
-            style={{ backgroundColor: "transparent" }}
+            class="upvote"
             id="upvote"
             onClick={() =>
               this.setState({ karma: parseInt(this.state.karma) + 1 })
             }
-          />
-          <label>{this.state.karma}</label>
+          />          
           <input
             width="50px"
             height="35px"
             type="image"
             src="images/triangle_down_red.png"
-            style={{ backgroundColor: "transparent" }}
+            class="downvote"
             id="downvote"
             onClick={() =>
               this.setState({ karma: parseInt(this.state.karma) - 1 })
             }
           />
+          <span class="karma-container"><label>{this.state.karma}</label></span>          
         </div>
 
         <div style={{ paddingTop: "0.2em" }}>

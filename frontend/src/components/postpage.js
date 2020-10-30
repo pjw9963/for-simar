@@ -30,15 +30,6 @@ class PostPage extends Component {
             <Header />
             <div class="page">
                     <div id="postPreviews">
-                        <form action="postpreview.html" id="post">
-                            <input type="submit" value="Post" />
-                        </form>
-                        <form action="messagePage.html" id="message">
-                            <input type="submit" value="Message" />
-                        </form>
-                        <form action="modpage.html" id="logIn">
-                            <input type="submit" value="Log In"/>
-                        </form>
                         <PostWrapper
                             title = {this.state.title}
                             desc = {this.state.desc}
