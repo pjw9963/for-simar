@@ -78,7 +78,7 @@ class ModPage extends Component {
           <div id="reportsBar">
             this is the report margin
             <p></p>
-            <a href="reportpage.html">I hate Cats</a>
+            <a href="reports">I hate Cats</a>
           </div>
         </div>
       </div>

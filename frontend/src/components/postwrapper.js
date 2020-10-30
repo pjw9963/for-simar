@@ -59,17 +59,6 @@ class PostWrapper extends React.Component {
               width="50px"
               height="35px"
               type="image"
-              src="images/triangle_up_green.png"
-              class="upvote"
-              id="upvote"
-              onClick={() =>
-                this.setState({ karma: parseInt(this.state.karma) + 1 })
-              }
-            />
-            <input
-              width="50px"
-              height="35px"
-              type="image"
               src="images/triangle_down_red.png"
               class="downvote"
               id="downvote"
@@ -80,6 +69,17 @@ class PostWrapper extends React.Component {
             <span class="karma-container">
               <label>{this.state.karma}</label>
             </span>
+              <input
+                  width="50px"
+                  height="35px"
+                  type="image"
+                  src="images/triangle_up_green.png"
+                  className="upvote"
+                  id="upvote"
+                  onClick={() =>
+                      this.setState({karma: parseInt(this.state.karma) + 1})
+                  }
+              />
           </div>
         </div>
 
