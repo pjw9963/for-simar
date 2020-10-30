@@ -84,7 +84,7 @@ module.exports = {
         .then(() => Post.destroy({ where: { id: id } }));
       // let n = await Post.destroy({ where: { id: id } });
       // if (n == 0) throw console.error('row not deleted');
-      res.status(201).send(postCollection);
+      res.status(201).send();
     } catch (e) {
       console.log(e);
 
