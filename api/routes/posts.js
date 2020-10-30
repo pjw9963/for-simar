@@ -16,4 +16,8 @@ router.delete("/api/post/remove", function(req, res){
     postController.delete(req, res);
 });
 
+router.get("/api/post/trending", function(req, res) {
+    postController.getTrendingPosts(req,res);
+});
+
 module.exports = router;

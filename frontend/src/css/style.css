@@ -156,3 +156,7 @@ textarea {
 .post-image, .post-title-container {
     cursor: pointer;
 }
+
+.trending-image {
+    max-width: 300px;
+}

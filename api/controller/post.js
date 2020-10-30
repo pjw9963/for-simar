@@ -1,17 +1,32 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize, DataTypes } = require("sequelize");
 const sequelize = new Sequelize({
-  dialect: 'sqlite',
-  storage: 'data/database.sqlite'
+  dialect: "sqlite",
+  storage: "data/database.sqlite",
 });
 const Post = require("../models/post")(sequelize, DataTypes);
 
-var fs = require('fs');
-const { resolve, relative, normalize } = require('path');
+var fs = require("fs");
+const { resolve } = require("path");
 
 module.exports = {
   async getAllPosts(req, res) {
     try {
       const postCollection = await Post.findAll();
+
+      res.status(201).send(postCollection);
+    } catch (e) {
+      console.log(e);
+
+      res.status(500).send(e);
+    }
+  },
+
+  async getTrendingPosts(req, res) {
+    try {
+      const postCollection = await Post.findAll({
+        limit: 5,
+        order: [["upVotes", "DESC"]],
+      });
 
       res.status(201).send(postCollection);
     } catch (e) {
@@ -28,7 +43,7 @@ module.exports = {
         title: req.body.title,
         text: req.body.text,
         imageName: fileName,
-        imageLocation: `data/images/${fileName}`
+        imageLocation: `data/images/${fileName}`,
       });
 
       res.status(201).send(postCollection);
@@ -42,9 +57,11 @@ module.exports = {
   async delete(req, res) {
     try {
       let id = req.body.id;
-      Post.findByPk(id).then(function(post) {
-        deleteImage(post.imageName);
-      }).then(() => Post.destroy({ where: { id: id } }));
+      Post.findByPk(id)
+        .then(function (post) {
+          deleteImage(post.imageName);
+        })
+        .then(() => Post.destroy({ where: { id: id } }));
       // let n = await Post.destroy({ where: { id: id } });
       // if (n == 0) throw console.error('row not deleted');
       res.status(201).send(postCollection);
@@ -91,11 +108,11 @@ function saveImage(baseImage) {
   const rand = Math.ceil(Math.random() * 1000);
   const filename = `Photo_${Date.now()}_${rand}.${ext}`;
 
-  fs.writeFileSync(localPath + '/' + filename, base64Data, "base64");
+  fs.writeFileSync(localPath + "/" + filename, base64Data, "base64");
   return filename;
 }
 
 function deleteImage(name) {
   const localPath = resolve("./data/images");
-  fs.unlink(localPath + '/' + name, () => console.log(name + ' deleted!'));
+  fs.unlink(localPath + "/" + name, () => console.log(name + " deleted!"));
 }
