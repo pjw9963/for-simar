@@ -171,3 +171,21 @@ form {
 textarea {
     resize: none;
 }
+
+.link-button {
+    background-color: #E5E5E5;
+    color: black;
+    padding: 1em 1.5em;
+    text-decoration: none;
+    margin: 2px;
+    border-radius: 5px;
+    transition-duration: 0.5s;
+}
+
+.link-button:link, .link-button:visited {
+    color:black;
+}
+
+.link-button:hover {
+    background-color: #c0c0c0;
+}
