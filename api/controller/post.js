@@ -11,7 +11,9 @@ const { resolve } = require("path");
 module.exports = {
   async getAllPosts(req, res) {
     try {
-      const postCollection = await Post.findAll();
+      const postCollection = await Post.findAll({
+        order: [["createdAt", "DESC"]],
+      });
 
       res.status(201).send(postCollection);
     } catch (e) {
