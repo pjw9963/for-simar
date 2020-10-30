@@ -54,9 +54,6 @@ class Home extends Component {
             })}
           </div>
           <div id="sideBar">this is the left margin</div>
-          <a href="preview" class="btn btn-primary">
-            Click for Post Page
-          </a>
         </div>
       </div>
     );

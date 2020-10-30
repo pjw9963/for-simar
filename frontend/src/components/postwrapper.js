@@ -13,15 +13,7 @@ function GoToPostRedirect(props) {
       forwardedData: props.pps,
     });
   }
-  return (
-    <h1
-      style={{ color: "white", textDecoration: "underline" }}
-      onClick={() => handleClick()}
-      class="title"
-    >
-      {props.pps.title}
-    </h1>
-  );
+  return <span onClick={() => handleClick()}>{props.pps.title}</span>;
 }
 
 class PostWrapper extends React.Component {
@@ -36,36 +28,42 @@ class PostWrapper extends React.Component {
 
   render() {
     return (
-      <div style={{ color: "white"}}>
-        <GoToPostRedirect pps={this.props} />
+      <div class="post-wrapper" style={{ color: "white" }}>
+        <div class="post-header">
+          <div class="post-title-container">
+            <GoToPostRedirect pps={this.props} />
+          </div>
 
-        <div class="karma" className="karma">
-          <input
-            width="50px"
-            height="35px"
-            type="image"
-            src="images/triangle_up_green.png"
-            class="upvote"
-            id="upvote"
-            onClick={() =>
-              this.setState({ karma: parseInt(this.state.karma) + 1 })
-            }
-          />          
-          <input
-            width="50px"
-            height="35px"
-            type="image"
-            src="images/triangle_down_red.png"
-            class="downvote"
-            id="downvote"
-            onClick={() =>
-              this.setState({ karma: parseInt(this.state.karma) - 1 })
-            }
-          />
-          <span class="karma-container"><label>{this.state.karma}</label></span>          
+          <div class="karma" className="karma">
+            <input
+              width="50px"
+              height="35px"
+              type="image"
+              src="images/triangle_up_green.png"
+              class="upvote"
+              id="upvote"
+              onClick={() =>
+                this.setState({ karma: parseInt(this.state.karma) + 1 })
+              }
+            />
+            <input
+              width="50px"
+              height="35px"
+              type="image"
+              src="images/triangle_down_red.png"
+              class="downvote"
+              id="downvote"
+              onClick={() =>
+                this.setState({ karma: parseInt(this.state.karma) - 1 })
+              }
+            />
+            <span class="karma-container">
+              <label>{this.state.karma}</label>
+            </span>
+          </div>
         </div>
-
-        <div style={{ paddingTop: "0.2em" }}>
+        
+        <div class="post-container">
           <Post
             title={this.props.title}
             showtitle={false}
@@ -73,7 +71,7 @@ class PostWrapper extends React.Component {
             desc={this.props.desc}
           />
         </div>
-        
+
         <button
           onclick="location.href = 'postpage.html';"
           onclick="postImage(document.getElementById('postImage').id);"
