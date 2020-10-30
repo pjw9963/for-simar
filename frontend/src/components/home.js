@@ -5,6 +5,24 @@ import PostWrapper from "./postwrapper";
 import "../css/style.css";
 
 class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      posts: [],
+    };
+  }
+
+  componentDidMount() {
+    var myRequest = new Request("http://localhost:3001/api/posts");
+    let posts = [];
+
+    fetch(myRequest)
+      .then((response) => response.json())
+      .then((data) => {
+        this.setState({ posts: data });
+      });
+  }
+
   render() {
     return (
       <div>
@@ -20,22 +38,20 @@ class Home extends Component {
             Log in
           </a>
           <div id="postPreviews">
-            <PostWrapper
-              title="Cat I found"
-              desc="This is an image of a cat that I found the other day and this cat was being super adorable and I just love it so much"
-              image="/images/kitty.webp"
-              karma="10"
-              numcomments="4"
-              numreplies="1"
-            />
-            <PostWrapper
-              title="Picture of RIT"
-              desc="Picture of RIT the other day"
-              image="/images/rit.jpg"
-              karma="68"
-              numcomments="13"
-              numreplies="6"
-            />
+            {this.state.posts.map((post) => {
+              return (
+                <div>
+                  <PostWrapper
+                    title={post.title}
+                    desc={post.text}
+                    image={`http://localhost:3001/${post.imageName}`}
+                    karma={post.upVotes + post.downVotes}
+                    numcomments="4"
+                    numreplies="1"
+                  />
+                </div>
+              );
+            })}
           </div>
           <div id="sideBar">this is the left margin</div>
           <a href="preview" class="btn btn-primary">
