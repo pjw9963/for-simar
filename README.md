@@ -4,7 +4,7 @@ There is an nodejs server running an express API in the backend, and a react fro
 
 # How to run it?
 
-until someone sets up a script, cd into the `api` folder and then run `npm start`
+until someone sets up a script, cd into the `api` folder and then run  `npm install` and `npm start`
 then with a new terminal, cd into the `frontend` folder and run `npm start`
 The server should run on port 3001, and react on 3000
 
