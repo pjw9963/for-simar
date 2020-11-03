@@ -1,0 +1,27 @@
+{
+  "name": "instachan",
+  "version": "1.0.0",
+  "description": "some weird reddit clone",
+  "main": "index.js",
+  "scripts": {
+    "server-run": "npm start --prefix api",
+    "frontend-run": "npm start --prefix frontend",
+    "server-install": "npm install --prefix api",
+    "frontend-install": "npm install --prefix frontend",
+    "install": "concurrently \"npm run server-install\" \"npm run frontend-install\"",
+    "dev": "concurrently \"npm run server-run\" \"npm run frontend-run\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ses7578/SWEN444App.git"
+  },
+  "author": "Patrick Wilbur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ses7578/SWEN444App/issues"
+  },
+  "homepage": "https://github.com/ses7578/SWEN444App#readme",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
