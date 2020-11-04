@@ -4,27 +4,75 @@ import Header from "./header";
 import "../css/style.css";
 
 class Signup extends Component {
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        let payload = {
+            uname: this.state.uname,
+            psw: this.state.psw,
+        };
+
+        fetch("http://localhost:3001/users/api/login", {
+            method: "POST",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+        })
+            .then((res) => res.json())
+            .then((json) => console.log(json));
+
+        if(payload.uname === "mod" && payload.psw === "mod") {
+            this.props.history.push('/mod');
+        }
+        else
+        {
+            this.props.history.push('/login');
+        }
+    };
+
+    unameChange = (e) => {
+        this.setState({ uname: e.target.value });
+    };
+
+    pswChange = (e) => {
+        this.setState({ psw: e.target.value });
+    };
+
     render() {
         return (
             <div>
                 <Header />
                 <div class="page">
 
-                    <form id="signUp" action = "/">
+                    <form
+                        onSubmit={(e)=>this.onSubmit(e)}
+                    >
 
-                        <label htmlFor="uname"><b>User Name:</b></label>
-                        <input type="text" name="uname" id="uname"/>
-                            <p></p>
-
-                        <label htmlFor="email"><b>Email:</b></label>
-                        <input type="text" name="email" id="email"/>
-                        <p></p>
-                        <label htmlFor="psw"><b>Password:</b></label>
-                        <input type="password" name="psw" id="psw"/>
-                        <p></p>
-                        <label htmlFor="psw-repeat"><b>Repeat Password:</b></label>
-                        <input type="password" name="psw-repeat" id="psw-repeat"/>
-                        <p></p>
+                        <div className="v-spacing">
+                            <label htmlFor="uname"><b>Username: </b></label>
+                            <input
+                                type="text"
+                                name="uname"
+                                onChange={this.unameChange}
+                            />
+                        </div>
+                        <div className="v-spacing">
+                            <label htmlFor="email"><b>Email: </b></label>
+                            <input
+                                type="text"
+                                name="email"
+                            />
+                        </div>
+                        <div className="v-spacing">
+                            <label htmlFor="psw"><b>Password: </b></label>
+                            <input
+                                type="password"
+                                name="psw"
+                                onChange={this.pswChange}
+                            />
+                        </div>
                         <input type="submit" value="Sign Up"/>
                     </form>
                     <p></p>
