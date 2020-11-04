@@ -1,14 +1,14 @@
 {
-  "name": "instachan",
+  "name": "instachanRunner",
   "version": "1.0.0",
   "description": "some weird reddit clone",
   "main": "index.js",
   "scripts": {
     "server-run": "npm start --prefix api",
     "frontend-run": "npm start --prefix frontend",
-    "server-install": "npm install --prefix api",
-    "frontend-install": "npm install --prefix frontend",
-    "install": "concurrently \"npm run server-install\" \"npm run frontend-install\"",
+    "server-install": "cd api && npm install",
+    "frontend-install": "cd frontend && npm install",
+    "install": "npm install -g concurrently && npm run server-install && npm run frontend-install",
     "dev": "concurrently \"npm run server-run\" \"npm run frontend-run\""
   },
   "repository": {
