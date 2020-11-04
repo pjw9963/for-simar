@@ -57,6 +57,7 @@ class PostPreview extends Component {
     })
       .then((res) => res.json())
       .then((json) => console.log(json));
+    this.props.history.push('/');
   };
 
   titleChange = (e) => {

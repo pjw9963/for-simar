@@ -4,20 +4,57 @@ import Header from "./header";
 import "../css/style.css";
 
 class Login extends Component {
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        let payload = {
+            uname: this.state.uname,
+            psw: this.state.psw,
+        };
+
+        if(payload.uname === "mod" && payload.psw === "mod") {
+            this.props.history.push('/mod');
+        }
+        else
+        {
+            this.props.history.push('/');
+        }
+    };
+
+    unameChange = (e) => {
+        this.setState({ uname: e.target.value });
+    };
+
+    pswChange = (e) => {
+        this.setState({ psw: e.target.value });
+    };
+
     render() {
         return (
             <div>
                 <Header />
                 <div class="page">
 
-                    <form id="signIn" action="mod">
-
-                        <label htmlFor="uname"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="uname" id="uname"/>
-                            <p></p>
-                            <label htmlFor="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" id="psw"/>
-                                <p></p>
+                    <form
+                        id="signIn"
+                        onSubmit={(e)=>this.onSubmit(e)}
+                    >
+                        <div class="v-spacing">
+                        <label htmlFor="uname"><b>Username: </b></label>
+                        <input
+                            type="text"
+                            name="uname"
+                            onChange={this.unameChange}
+                        />
+                        </div>
+                        <div class="v-spacing">
+                            <label htmlFor="psw"><b>Password: </b></label>
+                            <input
+                                type="password"
+                                name="psw"
+                                onChange={this.pswChange}
+                            />
+                        </div>
                                 <input type="submit" value="Log In" id="submit"/>
                     </form>
                     <form action="signup">
