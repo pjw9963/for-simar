@@ -12,7 +12,7 @@ class PageNavigation extends Component {
         <a class="link-button" href="messages">
           Messages
         </a>
-        <a class="link-button" href="mod">
+        <a class="link-button" href="login">
           Log in
         </a>
       </div>

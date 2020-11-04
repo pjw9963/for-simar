@@ -8,6 +8,8 @@ import PostPage from "./components/postpage";
 import ReportsPage from "./components/reportspage";
 import PostPreview from "./components/postpreview";
 import NotFound from "./components/notfound";
+import Login from "./components/loginPage";
+import Signup from "./components/signup";
 
 class App extends Component {
   render() {
@@ -20,6 +22,8 @@ class App extends Component {
             <Route path="/messages" component={Messages} />
             <Route path="/post" component={PostPage} />
             <Route path="/mod" component={ModPage} />
+            <Route path="/login" component={Login}/>
+            <Route path="/signup" component={Signup}/>
             <Route exact path="/" component={Home} />
             <Route path="*" component={NotFound} />
           </Switch>
