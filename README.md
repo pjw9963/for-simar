@@ -4,6 +4,10 @@ There is an nodejs server running an express API in the backend, and a react fro
 
 # How to run it?
 
+Node and NPM are required to run this application.
+
+Install from here: https://nodejs.org/en/download/
+
 from the root directory:
 
 `npm install`

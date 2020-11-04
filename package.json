@@ -8,7 +8,7 @@
     "frontend-run": "npm start --prefix frontend",
     "server-install": "cd api && npm install",
     "frontend-install": "cd frontend && npm install",
-    "install": "npm install -g concurrently && npm run server-install && npm run frontend-install",
+    "install": "npm install concurrently && npm run server-install && npm run frontend-install",
     "dev": "concurrently \"npm run server-run\" \"npm run frontend-run\""
   },
   "repository": {
