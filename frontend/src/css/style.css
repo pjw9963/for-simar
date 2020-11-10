@@ -187,3 +187,13 @@ textarea {
 .report-button:hover {
     background-color: #ba2525;
 }
+
+#login {
+    text-align: center;
+    position: relative;
+    margin: auto;
+    width: 45%;
+    font-size: 150%;
+    background-color: #606060;
+    overflow: auto;
+}

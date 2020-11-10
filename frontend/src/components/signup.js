@@ -45,7 +45,7 @@ class Signup extends Component {
             <div>
                 <Header />
                 <div class="page">
-
+                    <div id="login">
                     <form
                         onSubmit={(e)=>this.onSubmit(e)}
                     >
@@ -76,6 +76,7 @@ class Signup extends Component {
                         <input type="submit" value="Sign Up"/>
                     </form>
                     <p></p>
+                    </div>
                 </div>
             </div>
         );

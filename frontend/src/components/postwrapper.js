@@ -16,6 +16,30 @@ function GoToPostRedirect(props) {
   return <span onClick={() => handleClick()}>{props.pps.title}</span>;
 }
 
+function GoToPostRedirectComment(props) {
+    let history = useHistory();
+
+    function handleClick() {
+        history.push({
+            pathname: "/post",
+            forwardedData: props.pps,
+        });
+    }
+    return <button onClick={() => handleClick()}>{props.pps.numcomments} comments</button>;
+}
+
+function GoToPostRedirectReplies(props) {
+    let history = useHistory();
+
+    function handleClick() {
+        history.push({
+            pathname: "/post",
+            forwardedData: props.pps,
+        });
+    }
+    return <button onClick={() => handleClick()}>{props.pps.numreplies} replies</button>;
+}
+
 class PostWrapper extends React.Component {
   constructor(props) {
     super(props);
@@ -91,23 +115,14 @@ class PostWrapper extends React.Component {
             desc={this.props.desc}
             karma={this.props.karma}
           />
+            <div>
+                <GoToPostRedirectComment pps={this.props}/>
+            </div>
+
+            <div>
+                <GoToPostRedirectReplies pps={this.props}/>
+            </div>
         </div>
-
-        <button
-          onclick="location.href = 'postpage.html';"
-          onclick="postImage(document.getElementById('postImage').id);"
-          class="float-left submit-button"
-        >
-          {this.state.numcomments} comments
-        </button>
-
-        <button
-          onclick="location.href = 'postpage.html';"
-          onclick="postImage(document.getElementById('postImage').id);"
-          class="float-left submit-button"
-        >
-          {this.state.numreplies} replies
-        </button>
         <hr />
       </div>
     );

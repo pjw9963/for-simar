@@ -35,6 +35,7 @@ class Login extends Component {
                 <Header />
                 <div class="page">
 
+                    <div id = "login">
                     <form
                         onSubmit={(e)=>this.onSubmit(e)}
                     >
@@ -56,10 +57,13 @@ class Login extends Component {
                         </div>
                                 <input type="submit" value="Log In" id="submit"/>
                     </form>
+                        <p></p>
+                        <p></p>
                     <form action="signup">
                         <input type="submit" value="Sign Up"/>
                     </form>
                     <p></p>
+                    </div>
                 </div>
             </div>
         );
